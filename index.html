@@ -1,0 +1,251 @@
+<!-- tells the browser what type of document this is so  that it can use the new html5 features -->
+<!DOCTYPE html>
+
+<!-- tells the browser and accessiblity tools that the page is in English -->
+<html lang="en">
+
+<!-- the head contains information about the page, such as the title and links to stylesheets and is not displayed on the page -->
+<head>
+
+    <!--allows the browser to display a set of characters correctly -->
+    <meta charset="UTF-8">
+    <!--makes the webpage width match the device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- the title is displayed in the browser tab and is used by search engines -->
+<title>Sloshes & Crumbs</title>
+
+<!-- links to the CSS stylesheet -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<!-- the body contains the content of the page that is displayed to the user -->
+<body>
+
+
+<!-- Navigation -->
+ <!-- the header contains the navigation and is displayed at the top of the page -->
+<header>
+
+    <!--tells the browser the content in here is the navigation for the page -->
+    <nav>
+
+        <!--
+        this is a link.
+        <a> means anchor which creates a hyperlink.
+        href="#" specifies where the link goes.
+        class="logo" is a class that can be used to style the link with CSS.
+         -->
+        <a href="#" class="logo">Sloshes & Crumbs</a>
+
+
+        <!--unorderd list of navigation links.
+        class="nav-links" is a class that can be used to style the list with CSS.
+         -->
+        <ul class="nav-links">
+
+            <!-- <li> means list item and is used to create a list of items.-->
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- Hero Section -->
+
+<!--contains the main content of the page -->
+<main>
+
+    <!--section creates a distinct section of the content 
+    id="home" identifies the section -->
+    <section id="home" class="hero">
+        <!--div is a generic container element and class="hero-content" styles it -->
+        <div class="hero-content">
+            <p class="eyebrow">SIPS • BITES</p>
+
+            <!--<br> means line break -->
+            <h1>Good coffee.<br>Lovely bites.</h1>
+
+            <p>
+                Freshly brewed drinks and warm bakes, worth slowing down for.
+            </p>
+
+            <a href="#menu" class="hero-button">Explore the Menu</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="coffee and pastries at Sloshes & Crumbs">
+        </div>
+
+    </section>
+
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="section-heading">
+            <p class="eyebrow">WHAT WE'RE SERVING</p>
+            <h2>A little something for everyone.</h2>
+            <p>
+                From your morning coffee or tea to an afternoon sweet treat,
+                there's always something waiting for you.
+            </p>
+        </div>
+
+        <div class="menu-grid">
+
+            <!--<article> represents a self-contained unit of content -->
+            <article class="menu-card">
+                <img src="images/coffee.jpg" alt="Coffee drinks">
+                <h3>Sloshes</h3>
+                <p>Coffee, iced drinks, and teas.</p>
+                <a href="#drinks">View drinks</a>
+            </article>
+
+            <article class="menu-card">
+                <img src="images/bakes.jpg" alt="fresh pastries and baked goods">
+                <h3>Crumbs</h3>
+                <p>Fresh pastries, cakes, cookies, and more.</p>
+                <a href="#bakes">View bakes</a>
+            </article>
+
+            <article class="menu-card">
+                <img src="images/brunch.jpg" alt="brunch plate">
+                <h3>Brunch</h3>
+                <p>lovely handmade snacks and dishes.</p>
+                <a href="#brunch">View brunch</a>
+            </article>
+
+        </div>
+    <section class="menu-details">
+
+    <div class="menu-detail" id="drinks">
+        <p class="eyebrow">SLOSHES</p>
+        <h2>Something to sip.</h2>
+
+        <p>
+            Freshly brewed drinks and iced favourites.
+        </p>
+
+        <ul>
+            <li>Espresso</li>
+            <li>Latte</li>
+            <li>Cappuccino</li>
+            <li>Iced Coffee</li>
+            <li>Fresh Lemonade</li>
+            <li>Herbal Tea</li>
+            <li>Masala tea</li>
+            <li>Green Tea</li>
+        </ul>
+    </div>
+
+
+    <div class="menu-detail" id="bakes">
+        <p class="eyebrow">CRUMBS</p>
+        <h2>Freshly baked.</h2>
+
+        <p>
+            Consists of warm pastries, soft cakes, and sweet treats.
+
+        <ul>
+            <li>Butter Croissants</li>
+            <li>Brownies</li>
+            <li>Banana Bread</li>
+            <li>Carrot Cake</li>
+            <li>Cinnamon Rolls</li>
+            <li>Blueberry Muffins</li>
+            <li>Chocolate Chip Cookies</li>
+            <li>Doughnuts</li>
+        </ul>
+    </div>
+
+
+    <div class="menu-detail" id="brunch">
+        <p class="eyebrow">BRUNCH</p>
+        <h2>Timeless dishes.</h2>
+
+        <p>
+            Any day, any time.
+        </p>
+
+        <ul>
+            <li>Avocado Toast</li>
+            <li>French Toast</li>
+            <li>Breakfast Sandwich</li>
+            <li>Pancakes</li>
+            <li>Waffles</li>
+            <li>Breakfast Burrito</li>
+            <li>Omelette</li>
+            <li>Crepes</li>
+        </ul>
+    </div>
+
+</section>
+
+
+    <!-- Our Story Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <p class="eyebrow">OUR STORY</p>
+
+            <h2>Made for slow sips and sweet moments.</h2>
+
+            <p>
+                Sloshes & Crumbs started with a simple idea:
+                getting good treats and amazing drinks.
+            </p>
+
+            <p>
+                We're a neighbourhood café and bakery bringing
+                together brewed drinks and freshly made
+                treats.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Visit Us Section -->
+    <section id="visit" class="visit">
+        <div class="section-heading">
+            
+            <h2>See you over a cup?</h2>
+
+            
+        </div>
+
+        <div class="visit-details">
+            <div>
+                <h3>Opening Hours</h3>
+                <p>Monday – Friday: 7:00 AM – 7:00 PM</p>
+                <p>Saturday – Sunday: 8:00 AM – 8:00 PM</p>
+            </div>
+
+            <div>
+                <h3>Find Us</h3>
+                <p>17th lake Street</p>
+                <p>Nairobi, Kenya</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Sloshes & Crumbs. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
