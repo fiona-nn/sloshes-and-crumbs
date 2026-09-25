@@ -22,6 +22,10 @@ html {
     scroll-behavior: smooth;
 }
 
+section {
+    scroll-margin-top: 100px;
+}
+
 /* =========================
    BASE STYLES
 ========================= */
@@ -60,7 +64,12 @@ header {
     5% = horizontal spacing based on the screen width
     */
     padding: 1.5rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #f8f4ef;
 }
+
 
 nav {
     /*
@@ -83,14 +92,10 @@ nav {
     transition: opacity 0.3s ease;
 }
 
-.logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    transition: opacity 0.3s ease;
-}
 
 .logo:hover {
     opacity: 0.7;
+    transform: translateY(-1px);
 }
 
 .nav-links {
@@ -104,14 +109,31 @@ nav {
 }
 
 .nav-links a {
+    position: relative;
     font-size: 0.95rem;
     transition: opacity 0.3s ease;
 }
 
-.nav-links a:hover {
-    opacity: 0.6;
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    width: 100%;
+    height: 1px;
+    background-color: #2b2521;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
 }
 
+.nav-links a:hover {
+    opacity: 0.7;}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 /* =========================
    HERO SECTION
 ========================= */
@@ -127,12 +149,13 @@ So:
 80vh  = 80% of the screen height
 */
 
-    min-height: 80vh;
+    min-height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
-    padding: 5rem 5%;
+    padding: 4rem 5%;
+
 }
 
 .hero-content {
@@ -186,7 +209,6 @@ This helps the heading adapt to different screen sizes.
 
 .hero-image img {
     height: 100%;
-    overflow: hidden;
     object-fit: cover;
     display: block;
     width: 100%;
@@ -401,6 +423,9 @@ footer p {
 
 }
 
+.menu-toggle {
+    display: none;
+}
 
 /* =========================
    MOBILE
@@ -408,16 +433,37 @@ footer p {
 
 @media (max-width: 600px) {
 
+
     /* Navigation */
+        header {
+    padding: 1.5rem 5%;
+    }
+
     nav {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: flex-start;
-        gap: 1.2rem;
+    }
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #2b2521;
     }
 
     .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
         gap: 1rem;
-        flex-wrap: wrap;
+        padding-top: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
 
@@ -457,6 +503,28 @@ footer p {
         padding: 1.5rem 5%;
     }
 
+
+    /* Menu modal */
+
+    .menu-modal {
+    padding: 1rem;
+}
+
+    .menu-modal-content {
+     width: 100%;
+     max-height: 90vh;
+     padding: 3.5rem 1.5rem 2rem;
+}   
+
+    .menu-modal-content h2 {
+    font-size: 2.5rem;
+
+}
+
+    .menu-modal-content li {
+    gap: 1rem;
+    padding: 0.8rem 0;
+}
 }
 
 /* =========================
@@ -464,7 +532,7 @@ footer p {
 ========================= */
 
 .menu-details {
-    padding: 2rem 5% 8rem;
+    display:none;
 }
 
 .menu-detail {
@@ -496,4 +564,117 @@ footer p {
 .menu-detail li {
     padding-bottom: 0.8rem;
     border-bottom: 1px solid #d6ccc2;
+}
+
+/* =========================
+   MENU MODAL
+========================= */
+
+.menu-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(43, 37, 33, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-modal-content {
+    position: relative;
+    width: min(600px, 100%);
+    max-height: 85vh;
+    overflow-y: auto;
+    background-color: #f8f4ef;
+    padding: 4.5rem;
+    box-shadow: 0 20px 60px rgba(43, 37, 33, 0.18);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+.menu-modal.active .menu-modal-content {
+    transform: translateY(0);
+}
+
+.menu-modal-content h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.menu-modal-content > p:not(.eyebrow) {
+    margin-bottom: 2rem;
+}
+
+.menu-modal-content ul {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.menu-modal-content li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #d6ccc2;
+}
+
+.menu-modal-content li span:first-child {
+    font-size: 1rem;
+}
+
+.menu-modal-content li span:last-child {
+    font-size: 0.95rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.menu-modal-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2b2521;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-modal-close:hover {
+    opacity: 0.6;
+    transform: rotate(90deg);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: #2b2521;
+    color: #f8f4ef;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
 }

@@ -43,13 +43,16 @@
         href="#" specifies where the link goes.
         class="logo" is a class that can be used to style the link with CSS.
          -->
-        <a href="#" class="logo">Sloshes & Crumbs</a>
+        <a href="#home" class="logo">Sloshes & Crumbs</a>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            ☰
+        </button>   
 
         <!--unorderd list of navigation links.
         class="nav-links" is a class that can be used to style the list with CSS.
          -->
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
 
             <!-- <li> means list item and is used to create a list of items.-->
             <li><a href="#home">Home</a></li>
@@ -108,24 +111,25 @@
                 <img src="images/coffee.jpg" alt="Coffee drinks">
                 <h3>Sloshes</h3>
                 <p>Coffee, iced drinks, and teas.</p>
-                <a href="#drinks">View drinks</a>
+                <a href="#drinks" data-category="drinks">View drinks</a>
             </article>
 
             <article class="menu-card">
-                <img src="images/bakes.jpg" alt="fresh pastries and baked goods">
+                <img src="images/pastries.jpg" alt="fresh pastries and baked goods">
                 <h3>Crumbs</h3>
                 <p>Fresh pastries, cakes, cookies, and more.</p>
-                <a href="#bakes">View bakes</a>
+                <a href="#bakes" data-category="bakes">View bakes</a>
             </article>
 
             <article class="menu-card">
                 <img src="images/brunch.jpg" alt="brunch plate">
                 <h3>Brunch</h3>
                 <p>lovely handmade snacks and dishes.</p>
-                <a href="#brunch">View brunch</a>
+                <a href="#brunch" data-category="brunch">View brunch</a>
             </article>
 
         </div>
+        </section>  
     <section class="menu-details">
 
     <div class="menu-detail" id="drinks">
@@ -143,7 +147,7 @@
             <li>Iced Coffee</li>
             <li>Fresh Lemonade</li>
             <li>Herbal Tea</li>
-            <li>Masala tea</li>
+            <li>Masala Tea</li>
             <li>Green Tea</li>
         </ul>
     </div>
@@ -155,7 +159,7 @@
 
         <p>
             Consists of warm pastries, soft cakes, and sweet treats.
-
+        </p>    
         <ul>
             <li>Butter Croissants</li>
             <li>Brownies</li>
@@ -222,19 +226,43 @@
             
         </div>
 
-        <div class="visit-details">
-            <div>
-                <h3>Opening Hours:</h3>
-                <p>Monday – Friday: 7:00 AM – 7:00 PM</p>
-                <p>Saturday – Sunday: 8:00 AM – 8:00 PM</p>
-            </div>
+       <div class="visit-details">
 
-            <div>
-                <h3>Find Us:</h3>
-                <p>17th lake Street</p>
-                <p>Nairobi, Kenya</p>
-            </div>
-        </div>
+    <div>
+        <h3>Opening Hours</h3>
+        <p>Monday – Friday: 7:00 AM – 7:00 PM</p>
+        <p>Saturday – Sunday: 8:00 AM – 8:00 PM</p>
+    </div>
+
+    <div>
+        <h3>Find Us</h3>
+        <p>17th Lake Street</p>
+        <p>Nairobi, Kenya</p>
+    </div>
+
+    <div>
+        <h3>Get in Touch</h3>
+
+        <p>
+            <a href="tel:+254700123456">
+                tel:+254 700 123 456
+            </a>
+        </p>
+
+        <p>
+            <a href="mailto:café@sloshesandcrumbs.com">
+                café@sloshesandcrumbs.com
+            </a>
+        </p>
+    </div>
+
+    <div class="visit-action">
+        <a href="mailto:café@sloshesandcrumbs.com?subject=Order%20Ahead">
+        Order Ahead
+        </a>
+    </div>  
+</div>
+
     </section>
 
 </main>
@@ -245,7 +273,35 @@
     <p>© 2026 Sloshes & Crumbs. All rights reserved.</p>
 </footer>
 
+<!-- Menu Modal -->
+<div class="menu-modal" id="menuModal">
+
+    <div class="menu-modal-content">
+
+        <button class="menu-modal-close" id="menuModalClose">
+            &times;
+        </button>
+
+        <p class="eyebrow" id="modalCategory">SLOSHES</p>
+
+        <h2 id="modalTitle">Something to sip.</h2>
+
+        <p id="modalDescription">
+            Freshly brewed drinks and iced favourites.
+        </p>
+
+        <ul id="modalItems"></ul>
+
+    </div>
+
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    ↑
+</button>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
