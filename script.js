@@ -17,14 +17,14 @@ const menuData = {
         description:
             "Freshly brewed drinks and iced favourites.",
         items: [
-            { name: "Espresso", price: "Ksh 400" },
-            { name: "Cappuccino", price: "Ksh 400" },
-            { name: "Fresh Lemonade", price: "Ksh 300" },
-            { name: "Masala Tea", price: "Ksh 350" },
-            { name: "Latte", price: "Ksh 400" },
-            { name: "Iced Coffee", price: "Ksh 350" },
-            { name: "Herbal Tea", price: "Ksh 350" },
-            { name: "Green Tea", price: "Ksh 350" }
+            { name: "Espresso", price: "Ksh 400", image: "images/sloshes/Sloshiess/coffee.png" },
+            { name: "Cappuccino", price: "Ksh 400", image: "images/sloshes/Sloshiess/cappuccino.png" },
+            { name: "Fresh Lemonade", price: "Ksh 300", image: "images/sloshes/Sloshiess/lemonade.png" },
+            { name: "Masala Tea", price: "Ksh 350", image: "images/sloshes/Sloshiess/masala-tea.png" },
+            { name: "Latte", price: "Ksh 400", image: "images/sloshes/Sloshiess/latte.png" },
+            { name: "Iced Coffee", price: "Ksh 350", image: "images/sloshes/Sloshiess/iced-coffee.png" },
+            { name: "Herbal Tea", price: "Ksh 350", image: "images/sloshes/Sloshiess/herbal-tea.png" },
+            { name: "Green Tea", price: "Ksh 350", image: "images/sloshes/Sloshiess/green-tea.png" }
         ]
     },
 
@@ -34,14 +34,53 @@ const menuData = {
         description:
             "Warm pastries, soft cakes, and sweet treats.",
         items: [
-            { name: "Butter Croissants", price: "Ksh 400" },
-            { name: "Banana Bread", price: "Ksh 250" },
-            { name: "Cinnamon Rolls", price: "Ksh 300" },
-            { name: "Chocolate Chip Cookies", price: "Ksh 200" },
-            { name: "Brownies", price: "Ksh 300" },
-            { name: "Carrot Cake", price: "Ksh 300" },
-            { name: "Blueberry Muffins", price: "Ksh 350" },
-            { name: "Doughnuts", price: "Ksh 200" }
+            { 
+                name: "Butter Croissants", 
+                price: "Ksh 400", 
+                image: "images/bakes/bakeee/butter-croissant.png" 
+            },
+
+            { 
+                name: "Banana Bread", 
+                price: "Ksh 250", 
+                image: "images/bakes/bakeee/Banana-bread.png" 
+            },
+
+            { 
+                name: "Cinnamon Rolls", 
+                price: "Ksh 300", 
+                image: "images/bakes/bakeee/cinnamon-roll.png" 
+            },
+
+            { 
+                name: "Chocolate Chip Cookies", 
+                price: "Ksh 200", 
+                image: "images/bakes/bakeee/Chocolate-chip-cookies.png" 
+            },
+
+            { 
+                name: "Brownies", 
+                price: "Ksh 300", 
+                image: "images/bakes/bakeee/brownies.png" 
+            },
+
+            { 
+                name: "Carrot Cake", 
+                price: "Ksh 300", 
+                image: "images/bakes/bakeee/carrot-cake.png" 
+            },
+
+            { 
+                name: "Blueberry Muffins", 
+                price: "Ksh 350", 
+                image: "images/bakes/bakeee/blueberry-muffin.png" 
+            },
+
+            { 
+                name: "Donuts", 
+                price: "Ksh 200", 
+                image: "images/bakes/bakeee/Donuts.png" 
+            }
         ]
     },
 
@@ -51,14 +90,46 @@ const menuData = {
         description:
             "Any day, any time.",
         items: [
-            { name: "Avocado Toast", price: "Ksh 400" },
-            { name: "Breakfast Sandwich", price: "Ksh 400" },
-            { name: "Waffles", price: "Ksh 400" },
-            { name: "Omelette", price: "Ksh 350" },
-            { name: "French Toast", price: "Ksh 300" },
-            { name: "Pancakes", price: "Ksh 300" },
-            { name: "Breakfast Burrito", price: "Ksh 400" },
-            { name: "Crepes", price: "Ksh 350" }
+            { 
+                name: "Avocado Toast", 
+                price: "Ksh 400", 
+                image: "images/brunch/mini-brunch-photos/avocado-toast.png" 
+            },
+            { 
+                name: "Breakfast Sandwich", 
+                price: "Ksh 400", 
+                image: "images/brunch/mini-brunch-photos/sandwich.png" 
+            },
+            { 
+                name: "Waffles", 
+                price: "Ksh 400", 
+                image: "images/brunch/mini-brunch-photos/waffles.png" 
+            },
+            { 
+                name: "Omelette", 
+                price: "Ksh 350", 
+                image: "images/brunch/mini-brunch-photos/omelette.png" 
+            },
+            { 
+                name: "French Toast", 
+                price: "Ksh 300", 
+                image: "images/brunch/mini-brunch-photos/french-toast.png" 
+            },
+            { 
+                name: "Pancakes", 
+                price: "Ksh 300", 
+                image: "images/brunch/mini-brunch-photos/pancake.png" 
+            },
+            { 
+                name: "Breakfast Burrito", 
+                price: "Ksh 400", 
+                image: "images/brunch/mini-brunch-photos/breakfast-buritto.png" 
+            },
+            { 
+                name: "Crepes", 
+                price: "Ksh 350", 
+                image: "images/brunch/mini-brunch-photos/crepes.png" 
+            }
         ]
     }
 };
@@ -86,19 +157,23 @@ menuLinks.forEach(function (link) {
 
         selectedMenu.items.forEach(function (item) {
 
-            const listItem = document.createElement("li");
+           const listItem = document.createElement("li");
 
-            const itemName = document.createElement("span");
-            itemName.textContent = item.name;
+const itemImage = document.createElement("img");
+itemImage.src = item.image;
+itemImage.alt = item.name;
 
-            const itemPrice = document.createElement("span");
-            itemPrice.textContent = item.price;
+const itemName = document.createElement("span");
+itemName.textContent = item.name;
 
-            listItem.appendChild(itemName);
-            listItem.appendChild(itemPrice);
+const itemPrice = document.createElement("span");
+itemPrice.textContent = item.price;
 
-            modalItems.appendChild(listItem);
+listItem.appendChild(itemImage);
+listItem.appendChild(itemName);
+listItem.appendChild(itemPrice);
 
+modalItems.appendChild(listItem); 
         });
 
         menuModal.classList.add("active");
